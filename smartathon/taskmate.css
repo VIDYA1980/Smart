@@ -1,0 +1,16 @@
+body {
+    background-color: #c26b6b;
+    background-image: url('star.png.png');
+    background-repeat: repeat;
+    animation: starryNight 10s linear infinite;
+  }
+  
+  @keyframes starryNight {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 2000px 2000px;
+    }
+  }
+  

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Collaboration</title>
+  <link rel="stylesheet" type="text/css" href="taskmate.css">
+  <style>
+    /* CSS for the chat interface */
+    #chatbox {
+      width: 400px;
+      height: 300px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+      padding: 10px;
+    }
+
+    #messageInput {
+      width: 300px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Team Collaboration</h1>
+
+  <h2>Create Team</h2>
+  <form>
+    <input type="text" id="teamNameInput" placeholder="Enter team name">
+    <button type="button" onclick="createTeam()">Create Team</button>
+  </form>
+
+  <h2>Team Chat</h2>
+  <div id="chatbox"></div>
+
+  <h3>Send Message</h3>
+  <form>
+    <input type="text" id="messageInput" placeholder="Type your message">
+    <button type="button" onclick="sendMessage()">Send</button>
+  </form>
+
+  <script>
+    // JavaScript code for team creation and chat functionality
+    let teamName = '';
+    let messages = [];
+
+    function createTeam() {
+      const teamNameInput = document.getElementById('teamNameInput');
+      teamName = teamNameInput.value;
+      teamNameInput.value = '';
+
+      document.getElementById('chatbox').innerHTML = '';
+      messages = [];
+
+      addMessage(`Team "${teamName}" created. Start collaborating!`);
+    }
+
+    function sendMessage() {
+      const messageInput = document.getElementById('messageInput');
+      const message = messageInput.value;
+      messageInput.value = '';
+
+      addMessage(`[${teamName}] You: ${message}`);
+    }
+
+    function addMessage(message) {
+      messages.push(message);
+
+      const chatbox = document.getElementById('chatbox');
+      chatbox.innerHTML = messages.map(msg => `<p>${msg}</p>`).join('');
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

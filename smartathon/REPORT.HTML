@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Report Generator</title>
+  <link rel="stylesheet" type="text/css" href="REPORT.css">
+</head>
+<body>
+  <header>
+    <h1>Project Report Generator</h1>
+  </header>
+
+  <main>
+    <section id="report-form">
+      <h2>Create Project Report</h2>
+      <form id="project-report-form">
+        <label for="aim-input">AIM:</label>
+        <textarea id="aim-input" name="aim" rows="4" required></textarea>
+
+        <label for="apparatus-input">APPARATUS:</label>
+        <textarea id="apparatus-input" name="apparatus" rows="4" required></textarea>
+
+        <label for="theory-input">THEORY:</label>
+        <textarea id="theory-input" name="theory" rows="4" required></textarea>
+
+        <label for="result-input">RESULT:</label>
+        <textarea id="result-input" name="result" rows="4" required></textarea>
+
+        <button type="submit">Generate Report</button>
+      </form>
+    </section>
+
+    <section id="generated-report">
+      <h2>Generated Report</h2>
+      <div id="report-content"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Project Report Generator. All rights reserved.</p>
+  </footer>
+
+  <script src="report.js"></script>
+</body>
+</html>

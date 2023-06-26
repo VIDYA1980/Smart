@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>seek coding</title>
+    <link rel="stylesheet" href="main.css">
+    <!---we had linked our css file----->
+    <style>
+        .centered-text {
+            text-align: center;
+            font-size: 24px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <nav>
+                <ul class="MenuItems">
+                    <li><a href="givemeideas.html" target="_blank">IdeaWhiz</a></li>
+                    <li><a href="timetrack.html" target="_blank">Tick Tock</a></li>
+                    <li><a href="REPORT.HTML" target="_blank">ReportGuru</a></li>
+                    <li><a href="taskmate.html" target="_blank">TaskMates</a></li>
+                    <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">Login</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                </div>
+            </div>
+        </div>
+        <div class="centered-text">
+            <h1>WELCOME TO EDUMANAGE</h1>
+            <p>Start creating your project ^_^</p>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
